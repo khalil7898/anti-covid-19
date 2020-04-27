@@ -4,7 +4,7 @@
   "description": "web app based application created in purpose to protect you from covid-19 infection.",
   "main": "bin/www",
   "bin": {
-    "anti-covid-19": "mongoose.connextion.js"
+    "anti-covid-19": "www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
