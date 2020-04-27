@@ -1,22 +1,34 @@
 {
   "name": "anti-covid-19",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+  "version": "1.0.0",
+  "description": "web app based application created in purpose to protect you from covid-19 infection.",
+  "main": "bin/www",
+  "bin": {
+    "anti-covid-19": "mongoose.connextion.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "cookie-parser": "~1.4.4",
-    "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.10",
     "morgan": "^1.9.1",
     "path": "^0.12.7",
+    "cors": "^2.8.5",
+    "mongoose": "^5.9.10",
     "validator": "^13.0.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalil7898/anti-covid-19.git"
+  },
+  "author": "Khalil Zouari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khalil7898/anti-covid-19/issues"
+  },
+  "homepage": "https://github.com/khalil7898/anti-covid-19#readme"
 }
