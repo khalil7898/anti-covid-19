@@ -1,10 +1,9 @@
 {
   "name": "anti-covid-19",
   "version": "1.0.0",
-  "description": "web app based application created in purpose to protect you from covid-19 infection.",
-  "main": "./bin/www",
-  "bin": {
-    "anti-covid-19": "www"
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -17,11 +16,6 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www",
-    "heroku-postbuild": "npm install"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khalil7898/anti-covid-19.git"
