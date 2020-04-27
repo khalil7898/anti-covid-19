@@ -7,11 +7,12 @@ exports.saveAdmin = admin => {
   return new Admin(admin)
     .save()
     .then(admin => {
-      if (!admin) throw new Error("Error while inserting data to DB !!");
-      return admin.generateAuthToken();
+      if (!admin) return[null, new Error("Error while inserting data to DB !!")];
+      return admin.generateAuthToken()
     })
+    .then(token => [token, null])
     .catch(error => {
-      throw new Error(error.message);
+      return[null, new Error(error.message)];
     });
 };
 

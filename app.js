@@ -9,6 +9,7 @@ const db = require("./bin/mongoose.connextion");
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
+const hospitalRouter = require('./routes/hospital');
 
 db.connect();
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/hospitals', hospitalRouter);
 
 /*
 // serve react web app
