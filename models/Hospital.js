@@ -22,5 +22,10 @@ module.exports = mongoose.model(
     reacharger: { type: Number },
     totalCharger: { type: Number },
     coronaCharger: { type: Number },
+    state: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "State",
+      required: true,
+    },
   })
 );

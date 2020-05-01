@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const authAdmin = require("../middlewares/authAdmin");
-const hospitals = require("../controllers/hospitals");
+const hospital = require("../controllers/hospital");
 
-router.get("/", hospitals.getAll);
-router.put("/", authAdmin, hospitals.add);
+router.get("/", hospital.getAll);
+router.put("/", authAdmin, hospital.add);
+router.delete("/", authAdmin, hospital.delete);
 
 module.exports = router;
