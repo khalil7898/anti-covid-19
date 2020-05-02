@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// import './index.css';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/app-style.css';
+import '../node_modules/bootstrap/dist/css/sidebar-menu.css';
+import App from './App';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
