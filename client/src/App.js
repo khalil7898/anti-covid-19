@@ -14,18 +14,10 @@ import ListeHopital from "./pages/Admin/Hopital/Liste/Lister"
 import Register from './pages/Admin/register/register';
 import StatsHopitalHome from "./pages/Admin/Hopital/Stats/statsHopitalHome"
 import FormAjoutHopital from "./pages/Admin/Hopital/Ajout/formAjoutHopital"
+import Hospitals from'./components/Hospitals';
+import Confinement from "./components/Confinement";
+import Home from "./components/Home";
 
- import Home from "./components/Home";
-
-function HomePage()
-{
-  return(
-    <div>
-      <Map/>
-      <Home/>
-    </div>
-  )
-}
 
 
 
@@ -35,12 +27,14 @@ function App() {
 
       <Router>
      <Switch>
+      <Route path="/Hospitalinfo" exact component={Hospitals} />
+      <Route path="/Confinementinfo" exact component={Confinement} />
       <Route path="/login" exact component={Login} />
       <Route path="/listeHopital" exact component={ListeHopital} />
       <Route path="/register" exact component={Register} />
       <Route path="/statsHopital" exact component={StatsHopitalHome} />
       <Route path="/ajoutHopital" exact component={FormAjoutHopital}/>
-      <Route path="/" exact component={HomePage}/>
+      <Route path="/" exact component={Home}/>
       </Switch>
 
       

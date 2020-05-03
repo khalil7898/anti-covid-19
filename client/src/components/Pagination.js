@@ -11,7 +11,7 @@ const Pagination = ({cardPerPage, totalCardes , paginate}) => {
             <ul className="pagination">
                 {pageNumber.map( number =>(
                     <li key={number} className="page-item">
-                        <a onClick={() => paginate(number)} href="#root > div > div:nth-child(2) > div > div > div.col-lg-8 > div > div > div:nth-child(2)'" className='page-link'>
+                        <a onClick={() => paginate(number)} href="#ddk" className='page-link'>
                             {number} 
                         </a>
                     </li>
