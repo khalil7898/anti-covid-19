@@ -24,16 +24,11 @@ app.use("/api", indexRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/hospitals", hospitalRouter);
-app.get("*", function (req, res, next) {
-  res.send(
-    "Anti-COVID-19 Web App created with Express, React and Love. #Stay_Home #Stay_Safe. :)\nKhalil Zouari,\tDhia Gara,\tNader Zini,\tAnis Meddeb."
-  );
-});
-/*
+
 // serve react web app
-app.use(express.static(path.join(__dirname, '/client/build')));
+app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
-*/
+
 module.exports = app;
