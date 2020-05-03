@@ -1,5 +1,6 @@
 import React from "react";
 import Map from "./components/Map";
+
 import Menu from"./pages/Admin/Commun/menu"
 import Header from "./pages/Admin/Commun/header"
 import Footer  from "./pages/Admin/Commun/footer"
@@ -13,7 +14,7 @@ import ListeHopital from "./pages/Admin/Hopital/Liste/Lister"
 import Register from './pages/Admin/register/register';
 import StatsHopitalHome from "./pages/Admin/Hopital/Stats/statsHopitalHome"
 import FormAjoutHopital from "./pages/Admin/Hopital/Ajout/formAjoutHopital"
-import Map from "./components/Map";
+
  import Home from "./components/Home";
 
 function HomePage()
@@ -26,9 +27,12 @@ function HomePage()
   )
 }
 
+
+
 function App() {
   return (
     <div className="App">
+
       <Router>
      <Switch>
       <Route path="/login" exact component={Login} />
@@ -41,6 +45,7 @@ function App() {
 
       
     </Router>
+
     </div>
   );
 }
