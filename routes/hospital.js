@@ -5,6 +5,6 @@ const hospital = require("../controllers/hospital");
 
 router.get("/", hospital.getAll);
 router.put("/", authAdmin, hospital.add);
-router.delete("/", authAdmin, hospital.delete);
+router.delete("/", hospital.delete);
 
 module.exports = router;
