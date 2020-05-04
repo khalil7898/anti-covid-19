@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { compose } from "recompose";
+import profileImg from "../../../img/profile_img.jpg"
 
 
 function Header ()
@@ -211,7 +212,7 @@ function Header ()
                 >
                   <span className="user-profile">
                     <img
-                      src="assets/images/avatars/avatar-13.png"
+                      src={profileImg}
                       className="img-circle"
                       alt="user avatar"
                     />

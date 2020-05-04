@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { compose } from "recompose";
+import { withRouter } from "react-router-dom";
+
 import GoogleButton from "react-google-button";
 import useFormLogin from "./useFormLogin";
 import validationLogin from "./validationLogin";
@@ -6,7 +9,7 @@ import "../../../index.css";
 import axios from "axios";
 import ErreurMessage from "../Commun/erreurMessage";
 
-const Login = () => {
+const Login = ({ history }) => {
   const { handleOnChange, handleSubmit, values, errors } = useFormLogin(
     submit,
     validationLogin
@@ -23,7 +26,7 @@ const Login = () => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("nom", res.data.name);
 
-        window.location.href = "http://localhost:3000/statsHopital";
+        history.push("/statsHopital");
       })
       .catch((err) => {
         setErreurMsg(err.message);
@@ -121,4 +124,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default compose(withRouter)(Login);

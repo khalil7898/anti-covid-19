@@ -1,30 +1,35 @@
-
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import GoogleButton from "react-google-button";
 import useFormRegister from "./useFormRegister";
-import validationRegister from "./validationRegister"
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"
-import axios from"axios"
-import ErreurMessage from "../Commun/erreurMessage"
-const Register=()=> {
-  const  [erreurMsg,setErreurMsg]=useState("");
-    const {handleOnChange,
-        handleSubmit,values,errors}= useFormRegister (submit,validationRegister);
-        function submit()
-        {
-          console.log("submmited")
-          axios.post('https://anti-covid-19.herokuapp.com/api/admin/register',values)
-          .then(res=>{console.log(res)
-            window.location.href='http://localhost:3000/login'
-          }
-          )
-          .catch(err=>{setErreurMsg(err.message)})
-        }
+import validationRegister from "./validationRegister";
+import { compose } from "recompose";
+import { withRouter } from "react-router-dom";
 
-    return (
-      
-       <div id="wrapper" >
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import ErreurMessage from "../Commun/erreurMessage";
+const Register = ({ history }) => {
+  const [erreurMsg, setErreurMsg] = useState("");
+  const { handleOnChange, handleSubmit, values, errors } = useFormRegister(
+    submit,
+    validationRegister
+  );
+  function submit() {
+    console.log("submmited");
+    axios
+      .post("https://anti-covid-19.herokuapp.com/api/admin/register", values)
+      .then((res) => {
+        console.log(res);
+        history.push("/statsHopital");
+      })
+      .catch((err) => {
+        setErreurMsg(err.message);
+      });
+  }
+
+  return (
+    <div id="wrapper">
       <div className="card card-authentication1 mx-auto my-5">
         <div className="card-body">
           <div className="card-content p-2">
@@ -35,10 +40,10 @@ const Register=()=> {
               Sign up
             </div>
             <form onSubmit={handleSubmit} noValidate>
-            <div className="form-group">
+              <div className="form-group">
                 <label for="InputRegisterNom">Full Name</label>
                 <div className="position-relative has-icon-right ">
-                  <input  
+                  <input
                     type="text"
                     name="name"
                     id="InputRegisterNom"
@@ -53,14 +58,11 @@ const Register=()=> {
                   {errors.name && <p className="error">{errors.name}</p>}
                 </div>
               </div>
-            
-            
-
 
               <div className="form-group">
                 <label for="InputRegisterNom">cin</label>
                 <div className="position-relative has-icon-right ">
-                  <input  
+                  <input
                     type="number"
                     name="cin"
                     id="InputRegistercin"
@@ -75,13 +77,11 @@ const Register=()=> {
                   {errors.cin && <p className="error">{errors.cin}</p>}
                 </div>
               </div>
-            
-            
+
               <div className="form-group">
                 <label>Email</label>
                 <div className="position-relative has-icon-right ">
                   <input
-                  
                     type="Email"
                     name="email"
                     id="InputUserEmail"
@@ -112,12 +112,12 @@ const Register=()=> {
                   <div className="form-control-position">
                     <i className="icon-lock" />
                   </div>
-                  {errors.password && <p className="error">{errors.password}</p>}
+                  {errors.password && (
+                    <p className="error">{errors.password}</p>
+                  )}
                 </div>
               </div>
-            
-            
-            
+
               <div className="form-group">
                 <label>Telephone</label>
                 <div className="position-relative has-icon-right">
@@ -133,11 +133,11 @@ const Register=()=> {
                   <div className="form-control-position">
                     <i className="fa fa-phone" />
                   </div>
-                  {errors.telephone && <p className="error">{errors.telephone}</p>}
+                  {errors.telephone && (
+                    <p className="error">{errors.telephone}</p>
+                  )}
                 </div>
               </div>
-           
-             
 
               <div className="form-group">
                 <label>Date de Naissance</label>
@@ -147,20 +147,18 @@ const Register=()=> {
                     type="date"
                     id="InputDateNaiss"
                     className="form-control input-shadow"
-                    
-                
                     value={values.dateNaiss}
                     onChange={handleOnChange}
                   />
                   <div className="form-control-position">
                     <i className="fa fa-calendar-check-o" />
                   </div>
-                  {errors.dateNaiss && <p className="error">{errors.dateNaiss}</p>}
+                  {errors.dateNaiss && (
+                    <p className="error">{errors.dateNaiss}</p>
+                  )}
                 </div>
               </div>
 
-             
-            
               <div className="form-row">
                 <div className="form-group col-6">
                   <div className="icheck-material-primary">
@@ -168,7 +166,6 @@ const Register=()=> {
                     <label htmlFor="user-checkbox">I AGREE WITH TERMS </label>
                   </div>
                 </div>
-              
               </div>
               <button
                 type="submit"
@@ -176,7 +173,7 @@ const Register=()=> {
               >
                 Sign up
               </button>
-            
+
               <div className="mt-3 d-flex justify-content-center">
                 <GoogleButton type="dark" />
               </div>
@@ -185,21 +182,17 @@ const Register=()=> {
         </div>
         <div className="card-footer text-center py-3">
           <p className="text-muted mb-0">
-          Already have an account?{" "}
-            <a href="/login"> Sign in here</a>
+            Already have an account? <a href="/login"> Sign in here</a>
           </p>
         </div>
 
-  
-        <ErreurMessage msg={erreurMsg}/>
-
+        <ErreurMessage msg={erreurMsg} />
       </div>
       <a href="#" className="back-to-top">
         <i className="fa fa-angle-double-up" />{" "}
       </a>
     </div>
-    
-    )
-}
+  );
+};
 
-export default Register;
+export default compose(withRouter)(Register);

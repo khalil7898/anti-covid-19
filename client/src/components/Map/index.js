@@ -123,6 +123,7 @@ export default function SimpleExample() {
     setMyLocation({ lat, lng });
   };
   console.log({ tunisiaGeojson });
+  /*
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -138,7 +139,7 @@ export default function SimpleExample() {
       },
       { enableHighAccuracy: true }
     );
-  }, []);
+  }, []);*/
   const position = [myLocation.lat, myLocation.lng];
   return (
     <Map center={position} zoom={zoom} style={{ height: 400 }}>
