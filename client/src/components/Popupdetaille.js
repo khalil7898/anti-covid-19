@@ -19,11 +19,28 @@ const Popupdetaille = ({hopitale}) => {
               <ModalHeader toggle={toggle} className="modal-header bg-primary">
                 More informations about {hopitale.nom}{" "}
               </ModalHeader>
-              <ModalBody></ModalBody>
-              <label className="ml-3">capacite Total : </label>
-              <p className="ml-3">{hopitale.capaciteTotal}</p>
-              <label className="ml-3">capacite Corona : </label>
-              <p className="ml-3">{hopitale.capaciteCorona}</p>
+               <ModalBody>
+                  <label className="ml-3"> Région: </label>
+                  <p className="ml-3">{hopitale.adress.nom}</p>
+                  <label className="ml-3">Nombre total de lits: </label>
+                  <p className="ml-3">{hopitale.capaciteTotal}</p>
+                  <label className="ml-3">
+                    Nombre de lits consacrés à la maladie corona:{" "}
+                  </label>
+                  <p className="ml-3">{hopitale.capaciteCorona}</p>
+                  <label className="ml-3">Nombre de lits de récupération </label>
+                  <p className="ml-3">{hopitale.capaciteRea}</p>
+                  <label className="ml-3">
+                    Nombre totales des patients hospitalisés{" "}
+                  </label>
+                  <p className="ml-3">{hopitale.totalCharger}</p>
+                  <label className="ml-3">Nombre de personnes avec corona </label>
+                  <p className="ml-3">{hopitale.coronaCharger}</p>
+                  <label className="ml-3">
+                    nombre de patients corona en réanimation
+                  </label>
+                  <p className="ml-3">{hopitale.reacharger}</p>
+        </ModalBody>
               <ModalFooter>
                 <Button
                   color="secondary"
