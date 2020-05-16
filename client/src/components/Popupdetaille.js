@@ -13,7 +13,7 @@ const Popupdetaille = ({hopitale}) => {
               className="btn btn-outline-primary btn-block m-1 "
               onClick={toggle}
             >
-              more information
+              Plus d'informations
             </Button>
             <Modal isOpen={modal} toggle={toggle}>
               <ModalHeader toggle={toggle} className="modal-header bg-primary">

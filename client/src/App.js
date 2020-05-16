@@ -36,6 +36,8 @@ function App() {
       <Route path="/statsHopital" exact component={StatsHopitalHome} />
       <Route path="/ajoutHopital" exact component={FormAjoutHopital}/>
       <Route path="/" exact component={Home}/>
+      <Route path="/Home" exact component={Home}/>
+      
       </Switch>
 
       

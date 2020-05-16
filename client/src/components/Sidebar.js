@@ -6,6 +6,11 @@ function Sidebare() {
     <div className="">
       <div id="sidebar-wrapper" >
         <ul className="sidebar-menu do-nicescrol mt-5">
+        <li>
+            <a href="/Home" className="waves-effect">
+              <span>Home</span>
+            </a>
+          </li>
           <li>
             <a href="/Hospitalinfo" className="waves-effect">
               <span>Informations sur les hopitales</span>
