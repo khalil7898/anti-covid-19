@@ -17,6 +17,7 @@ import FormAjoutHopital from "./pages/Admin/Hopital/Ajout/formAjoutHopital"
 import Hospitals from'./components/Hospitals';
 import Confinement from "./components/Confinement";
 import Home from "./components/Home";
+import Detaille from "./components/Detaille.";
 
 
 
@@ -37,6 +38,7 @@ function App() {
       <Route path="/ajoutHopital" exact component={FormAjoutHopital}/>
       <Route path="/" exact component={Home}/>
       <Route path="/Home" exact component={Home}/>
+      <Route path="/detailleinfo" exact component={Detaille}/>
       
       </Switch>
 

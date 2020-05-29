@@ -23,7 +23,7 @@ function Sidebare() {
             </a>
           </li>
           <li>
-            <a href="" className="waves-effect">
+            <a href="/detailleinfo" className="waves-effect">
               <span>Informations sur les governements </span>
             </a>
           </li>

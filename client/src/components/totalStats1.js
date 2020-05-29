@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Sidebare from "./Sidebar";
-import Map from "./Map";
-
 import axios from "axios";
 import { Line } from "react-chartjs-2";
 
