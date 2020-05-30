@@ -115,12 +115,15 @@ const listCovidsTest = [
 ];
 export default function SimpleExample() {
   const [myLocation, setMyLocation] = useState(staticLocation);
-  const [zoom, setZoom] = useState(6);
-  /*
   const [covidCases, setCovidCases] = useState(listCovidsTest);
+  const [zoom, setZoom] = useState(6);
+
+  console.log({ total: listGeojsons.totalCases });
   const setLocation = (lat, lng) => {
     setMyLocation({ lat, lng });
   };
+  console.log({ tunisiaGeojson });
+  /*
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -142,9 +145,39 @@ export default function SimpleExample() {
     <Map center={position} zoom={zoom} style={{ height: 400 }}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        url={true ? "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png":"https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"}
       />
-     
+      {false && <Marker position={position} icon={getStatusIcon(-1)}>
+        <Popup>Your Location</Popup>
+      </Marker>}
+      {false && covidCases.map((cc) => (
+        <Marker
+          position={[cc.location.lat, cc.location.lng]}
+          icon={getStatusIcon(cc.status)}
+        />
+      ))}
+      <GeoJSON
+        data={tunisiaGeojson}
+        onClick={() => console.log("qsdqsdqsdqs")}
+        style={() => ({
+          fillColor: "#333",
+          color: "#42b6f5",
+          weight: 1,
+          opacity: 1,
+        })}
+      />
+      {listGeojsons.map((el, index) => (
+        <GeoJSON
+          data={el.data}
+          onClick={() => console.log(el.name)}
+          style={() => ({
+            fillColor: getColor(el.nbCases, listGeojsons.totalCases),
+            color: "#fff",
+            weight: 1,
+            opacity: 1,
+          })}
+        />
+      ))}
     </Map>
   );
 }
