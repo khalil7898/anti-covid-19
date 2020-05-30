@@ -91,7 +91,7 @@ const Stats = () => {
   }, []);
   return (
     <div className="container-fluid">
-      <Map></Map>
+     
       <div className="row">
         <div className="col-lg-2 ">
           <Sidebare />
