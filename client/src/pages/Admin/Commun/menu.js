@@ -8,7 +8,12 @@ import { createEventHandlerWithConfig } from "recompose";
 
 function Menu()
 {
-  const [count, setCount] = useState(0);
+  
+
+  function handleClick(e) {
+  
+    localStorage.clear();
+  }
     return (
       <div  >
         <div
@@ -59,27 +64,60 @@ function Menu()
               </ul>
             </li>
 
-            
+
+           
+
             <li className="sidebar-header">
               <a  className="waves-effect">
-                <i className="zmdi zmdi-coffee text-danger" />{" "}
-                <span>Important</span>
+                <i className="fa fa-home" />{" "}
+                <span> centre de confinement</span>{" "}
+                <i className="fa fa-angle-left pull-right" />
+              </a>
+              <ul className="sidebar-submenu">
+              <li className="sidebar-header">
+              <a  className="waves-effect" href="/listeCentre">
+                <i className="icon-list icons"/>
+                <span>Lister </span>
               </a>
             </li>
-            <li  className="sidebar-header">
-              <a  className="waves-effect">
-                <i className="zmdi zmdi-chart-donut text-success" />{" "}
-                <span>Warning</span>
+            <li className="sidebar-header">
+              <a  className="waves-effect"  href="/ajoutCentre">
+                <i className="icon-plus icons "/>
+                <span>Ajouter</span>
               </a>
             </li>
+
+           
+                
+              </ul>
+            </li>
+
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
+            <li  className="sidebar-header waves-effect"></li>
             <li  className="sidebar-header waves-effect">
-                <a href="#">
-               
-                  
-                <i className="zmdi zmdi-share text-info" />{" "}
-                <span>Information</span>
+
+
+                <a href="/login" onClick={handleClick}>
+                <i className="zmdi zmdi-key text-danger" />{" "}
+                <span>LogOut</span>
                 </a>
-              
             </li>
            
           </ul>
