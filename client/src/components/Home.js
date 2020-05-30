@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Stats from './totalStats';
+import Stats from "./totalStats";
+import Map from "./Map";
 
 function Home(props) {
-  
-
   return (
-   <Stats/>
+    <React.Fragment>
+      <Map />
+      <Stats />
+    </React.Fragment>
   );
 }
 

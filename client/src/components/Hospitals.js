@@ -42,6 +42,7 @@ function Hospitals() {
   const paginate = (pageNumber) => setCurrentCard(pageNumber);
   return (
     <div className="container-fluid">
+            <Map />
       <div className="row">
         <div className="col-lg-4 ">
           <Sidebare />

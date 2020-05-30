@@ -122,7 +122,6 @@ export default function SimpleExample() {
   const setLocation = (lat, lng) => {
     setMyLocation({ lat, lng });
   };
-  console.log({ tunisiaGeojson });
   /*
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -147,15 +146,18 @@ export default function SimpleExample() {
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
       />
-      <Marker position={position} icon={getStatusIcon(-1)}>
-        <Popup>Your Location</Popup>
-      </Marker>
-      {covidCases.map((cc) => (
-        <Marker
-          position={[cc.location.lat, cc.location.lng]}
-          icon={getStatusIcon(cc.status)}
-        />
-      ))}
+      {false && (
+        <Marker position={position} icon={getStatusIcon(-1)}>
+          <Popup>Your Location</Popup>
+        </Marker>
+      )}
+      {false &&
+        covidCases.map((cc) => (
+          <Marker
+            position={[cc.location.lat, cc.location.lng]}
+            icon={getStatusIcon(cc.status)}
+          />
+        ))}
       <GeoJSON
         data={tunisiaGeojson}
         onClick={() => console.log("qsdqsdqsdqs")}

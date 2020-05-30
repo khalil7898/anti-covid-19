@@ -5,7 +5,6 @@ import Cardconf from "./Cardconf";
 import Sidebare from "./Sidebar";
 import Map from "./Map";
 
-
 function Confinement(props) {
   const [confPlaces, setConfPlaces] = useState([]);
   const [nameConfPlace, setNameConfPlace] = useState("");
@@ -44,6 +43,7 @@ function Confinement(props) {
 
   return (
     <div className="container-fluid">
+      <Map />
       <div className="row">
         <div className="col-lg-4 ">
           <Sidebare />
@@ -55,7 +55,7 @@ function Confinement(props) {
                 <div className="card col-lg-10 mt-4 ">
                   <div className="card-body">
                     <div className="card-title text-primary">
-                      Trouver votre centre de cofinement 
+                      Trouver votre centre de cofinement
                     </div>
                     <hr />
 

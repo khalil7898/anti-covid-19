@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MDBDataTable } from "mdbreact";
 import axios from "axios";
 import Sidebare from "./Sidebar";
+import Map from "./Map";
 
 function Detaille() {
   const [governemnts, setGovernemnts] = useState([]);
@@ -74,6 +75,7 @@ function Detaille() {
 
   return (
     <div className="">
+      <Map />
       <div className="row">
         <div className="col-lg-3 ">
           <Sidebare />
