@@ -3,6 +3,7 @@ const adminQuerys = require("../db/admin");
 exports.register = async function (req, res, next) {
   try {
     const [token, error] = await adminQuerys.saveAdmin(req.body);
+    console.log(error)
     if (error) return res.status(400).json({ error });
     res.status(201).json({ token });
   } catch (error) {
@@ -15,6 +16,7 @@ exports.login = async function (req, res, next) {
   try {
     const email = req.body.email,
       password = req.body.password;
+      
     if (!email || !password) throw new Error("Bad Request!!");
     const { admin, token } = await adminQuerys.findAdminByCredentials(
       email,

@@ -17,6 +17,8 @@ const Register = ({ history }) => {
   );
   function submit() {
     console.log("submmited");
+    
+    
     axios
       .post("https://anti-covid-19.herokuapp.com/api/admin/register", values)
       .then((res) => {
@@ -24,7 +26,7 @@ const Register = ({ history }) => {
         history.push("/statsHopital");
       })
       .catch((err) => {
-        setErreurMsg(err.message);
+        setErreurMsg("Try to change email");
       });
   }
 

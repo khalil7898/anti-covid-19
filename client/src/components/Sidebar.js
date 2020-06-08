@@ -4,9 +4,14 @@ import hopitales from "./Hospitals.js";
 function Sidebare() {
   return (
     <div className="">
-      <div id="sidebar-wrapper" >
+      <div id="sidebar-wrapper">
         <ul className="sidebar-menu do-nicescrol mt-5">
-        <li>
+          <li>
+            <a href="/login" className="waves-effect">
+              <span>Connect as Admin</span>
+            </a>
+          </li>
+          <li>
             <a href="/Home" className="waves-effect">
               <span>Home</span>
             </a>

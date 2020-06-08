@@ -2,7 +2,6 @@ import React from 'react'
 
 const  validationAjoutHopital=(values) =>{
     let errors = {};
-   
     if (!values.nom) {
         errors.nom ="Name is required";
       }
