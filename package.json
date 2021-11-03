@@ -14,7 +14,7 @@
     "path": "^0.12.7",
     "cors": "^2.8.5",
     "mongoose": "^5.9.10",
-    "validator": "^13.0.0",
+    "validator": "^13.7.0",
     "express": "~4.16.1",
     "cookie-parser": "~1.4.4"
   },
